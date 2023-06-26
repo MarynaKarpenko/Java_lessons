@@ -10,6 +10,14 @@ public class Task1 {
 
         Test myTest = new Test();
         myTest.run();
+        System.out.println(myTest.myIntTest+" - "+Test.myIntStatic);
+        Test.myIntStatic = 999;
+        Test myTest1 = new Test();
+        myTest1.myIntTest = 88;
+        System.out.println(myTest1.myIntTest+" - "+Test.myIntStatic);
+        Test myTest2 = new Test();
+        myTest2.myIntTest = 99;
+        System.out.println(myTest2.myIntTest+" - "+Test.myIntStatic);
     }
     static void our() {
         int myInt = 1;
