@@ -6,7 +6,7 @@ public class IfElseIfOperations {
     public static void main(String[] args) {
         Random random = new Random();
         float number = random.nextFloat() + random.nextInt(10);
-        System.out.println("Сгенерированное второе число: " + number);
+        System.out.println("Сгенерированное число: " + number);
 
         System.out.println(""); // разделительная строка
 
