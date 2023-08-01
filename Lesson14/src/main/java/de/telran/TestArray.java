@@ -74,6 +74,10 @@ public class TestArray {
             System.out.println(val);
         }
 
+        // сортировка
+        System.out.println("----arrInt----отсортирован");
+        Arrays.sort(arrInt);
+        for (int val : arrInt) System.out.println(val);
     }
     // метод
     static int[] copyArray(int [] oldArr, int newSize) {
@@ -87,5 +91,4 @@ public class TestArray {
         }
         return newArr;
     }
-
 }
