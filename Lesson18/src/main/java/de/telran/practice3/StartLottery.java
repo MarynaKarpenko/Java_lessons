@@ -16,14 +16,21 @@ public class StartLottery {
 //                System.out.println(userLotterys[i][j]);
         // -------
 
-        int[] userNumbers = Utils.getUserLotteryNumbers();
-        System.out.println(Arrays.toString(userNumbers));
+        int[][] userNumbers = Utils.getUserLotteryNumbers();
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Игрок " + (i + 1) + ": " + Arrays.toString(userNumbers[i]));
+        }
+
 
         LotteryEngine lottery = new LotteryEngine();
         lottery.runLottery();
         int[] winnerNumbers = lottery.getLuckyNumbers();
-        System.out.println(Arrays.toString(winnerNumbers));
+        System.out.println("Выигрышные номера: " + Arrays.toString(winnerNumbers));
 
-        System.out.println("Совпало: " + Utils.compareWinnerNumbers(winnerNumbers, userNumbers));
+        for (int player = 0; player < 3; player++) {
+            System.out.println("Игрок " + (player + 1) + " совпало: " + Utils.compareWinnerNumbers(winnerNumbers,
+                    userNumbers[player]));
+        }
+
     }
 }
