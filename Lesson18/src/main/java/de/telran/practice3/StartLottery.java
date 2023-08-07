@@ -6,14 +6,14 @@ public class StartLottery {
     public static void main(String[] args) {
         // многомерный массив
 //        int countUsers = 3;
-//        int[][] userLotterys = new int[countUsers][Constants.COUNT_SET_SIZE];
+//        int[][] userLotteries = new int[countUsers][Constants.COUNT_SET_SIZE];
 //        for (int i = 0; i < countUsers; i++){
 //            int[] userNumbers = Utils.getUserLotteryNumbers();
-//            userLotterys[i] = userNumbers;
+//            userLotteries[i] = userNumbers;
 //        }
 //        for (int i = 0; i < countUsers; i++)
 //            for (int j = 0; j < Constants.COUNT_SET_SIZE; j++)
-//                System.out.println(userLotterys[i][j]);
+//                System.out.println(userLotteries[i][j]);
         // -------
 
         int[][] userNumbers = Utils.getUserLotteryNumbers();
@@ -31,6 +31,5 @@ public class StartLottery {
             System.out.println("Игрок " + (player + 1) + " совпало: " + Utils.compareWinnerNumbers(winnerNumbers,
                     userNumbers[player]));
         }
-
     }
 }
