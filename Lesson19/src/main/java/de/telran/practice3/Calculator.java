@@ -4,6 +4,16 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Calculator {
+
+    public static final char PLUS_SIGN = '+';
+    public static final char MINUS_SIGN = '-';
+    public static final char MULTIPLICATION_SIGN = '*';
+    public static final char DIVISION_SIGN = '/';
+    public static final char REMAINDER_SIGN = '%';
+    public static final String YES = "y";
+    public static final String NO = "n";
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.ENGLISH);
@@ -19,31 +29,32 @@ public class Calculator {
                 System.out.println("Введите знак математической операции (+, -, *, /, %):");
                 String signString = scanner.next();
                 sign = signString.charAt(0);
-            } while (sign != '+' && sign != '-' && sign != '*' && sign != '/' && sign != '%');
+            } while (sign != PLUS_SIGN && sign != MINUS_SIGN && sign != MULTIPLICATION_SIGN &&
+                    sign != DIVISION_SIGN && sign != REMAINDER_SIGN);
 
             double argumentTwo;
             do {
                 System.out.println("Введите значение второго аргумента (разделитель целой и дробной части - точка):");
                 argumentTwo = scanner.nextDouble();
-            } while (argumentTwo == 0 && (sign == '/' || sign == '%'));
+            } while (argumentTwo == 0 && (sign == DIVISION_SIGN || sign == REMAINDER_SIGN));
 
 
             double result = 0;
 
             switch (sign) {
-                case '+':
+                case PLUS_SIGN:
                     result = argumentOne + argumentTwo;
                     break;
-                case '-':
+                case MINUS_SIGN:
                     result = argumentOne - argumentTwo;
                     break;
-                case '*':
+                case MULTIPLICATION_SIGN:
                     result = argumentOne * argumentTwo;
                     break;
-                case '/':
+                case DIVISION_SIGN:
                     result = argumentOne / argumentTwo;
                     break;
-                case '%':
+                case REMAINDER_SIGN:
                     result = argumentOne % argumentTwo;
                     break;
             }
@@ -52,9 +63,9 @@ public class Calculator {
             do {
                 System.out.println("Выполнить еще вычисление? (Y/N):");
                 needNextCalculation = scanner.next();
-            } while (!"y".equalsIgnoreCase(needNextCalculation) &&
-                     !"n".equalsIgnoreCase(needNextCalculation));
-        } while ("y".equalsIgnoreCase(needNextCalculation));
+            } while (!YES.equalsIgnoreCase(needNextCalculation) &&
+                     !NO.equalsIgnoreCase(needNextCalculation));
+        } while (YES.equalsIgnoreCase(needNextCalculation));
     }
 }
 
