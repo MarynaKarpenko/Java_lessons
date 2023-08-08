@@ -56,7 +56,7 @@ public class Calculator {
                     break;
                 case REMAINDER_SIGN:
                     result = argumentOne % argumentTwo;
-                    break;
+
             }
             System.out.println(String.format("%.2f %s %.2f = %.2f ",
                     argumentOne, sign, argumentTwo, result));
